@@ -33,4 +33,14 @@ Feature: Add to Cart
         * click on the clear Button
         Then All items should be removed form the cart
 
+    Scenario: Add same Product Twice
+        And I scroll to product list tab
+        * hover over the product image
+        * Add to cart bar is displayed
+        When I click on the add to cart bar for the same product
+        Then the product should be counted and added to cart as a second quantity of the same product
+
+
+        
+
 
