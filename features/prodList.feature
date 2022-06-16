@@ -3,7 +3,7 @@ Feature: Product List
     Given I Launch chrome browser
     When I Open Qa Recruitment task app
     And Scroll to product list tab
-
+    
   Scenario: Verify 6 Products to be displayed 
     Then Six products should be displayed
 
