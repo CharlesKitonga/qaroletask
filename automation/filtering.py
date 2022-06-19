@@ -12,16 +12,16 @@ driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager()
 driver.maximize_window()
 
 driver.get("https://qa-recruitment-task.netlify.app/")
-driver.execute_script("window.scrollBy(0, 1200)", "") #scroll by pixel
-def filtering():
-    driver.find_element(By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[2]/div/div/input").click()
+driver.execute_script("window.scrollBy(0, 1300)", "") #scroll by pixel
 
-    time.sleep(2)
-    driver.find_element(By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[4]/div/div/input").click()
+driver.find_element(By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[2]/div/div/input").click()
 
-    time.sleep(2)
-    wait = WebDriverWait(driver, 10)
-    element = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[6]/div/div/input")))
-    element.click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[4]/div/div/input").click()
 
-    driver.quit()
+time.sleep(2)
+wait = WebDriverWait(driver, 10)
+element = wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='__next']/div/main/div/div/div[5]/div/div[1]/div/div[2]/div/div[6]/div/div/input")))
+element.click()
+
+driver.quit()
