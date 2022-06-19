@@ -4,13 +4,13 @@
 - I used Selenium framework with Python for automating.
 - The features' folder contains files that I wrote manual tests using the same naming convention. For manual tests I wrote them using Gherkin language.
 
-## Bus
+## Bugs
 
 - I have also attached an Excel file with a bug report.
 
 ## Design Suggestions
 
-- For design suggestions I have also attached a designsuggestions file that the developers can go through for insights.
+- For design suggestions I have also attached a design suggestions file that the developers can go through for insights.
 
 ## Questions
 
