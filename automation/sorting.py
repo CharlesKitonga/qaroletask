@@ -1,11 +1,12 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.select import Select
 from webdriver_manager.chrome import ChromeDriverManager
 
-import  time
 
-#Open Chrome Browser
+#Open Chrome
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
@@ -14,8 +15,11 @@ driver.maximize_window()
 driver.get("https://qa-recruitment-task.netlify.app")
 driver.execute_script("window.scrollBy(0,1200)", "") # scroll by pixel
 
-while True:
-    current_page_number = int(driver.find_element(By.CSS_SELECTOR, '#__next > div > main > div > div > div:nth-child(5) > div > div.style__Column-sc-4ctdae-1.eAPRKs > div > div.style__Column-sc-4ctdae-1.iTjutW > div > div > ol > li:nth-child(2)').text)
-    next_page_link = driver.find_element(By.XPATH, "//body/div[@id='__next']/div[1]/main[1]/div[1]/div[1]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/ol[1]/li[8] ")
-    next_page_link.click()
-    time.sleep(3)
+sorting = Select(driver.find_element(By.XPATH, "//*[@id='__next']/div/main/div/div/div[4]/div/div[2]/div/select"))
+sorting.select_by_value('Price')
+time.sleep(5)
+sorting.select_by_value('Alphabetically')
+
+time.sleep(5)
+
+driver.quit()

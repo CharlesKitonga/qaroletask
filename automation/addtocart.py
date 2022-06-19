@@ -32,6 +32,11 @@ time.sleep(5)
 # Check if add to cart in the header section is clickable
 headerBtn = driver.find_element(By.XPATH, "//*[@id='__next']/div/div/div/div[2]/button").click()
 
-time.sleep(5)
+# removeBtn = driver.find_element(By.XPATH, "//body/div[@id='__next']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]").click()
+clearBtn = driver.find_element(By.XPATH, "//*[@id='__next']/div/div/div/div[2]/div/div/div[3]/button").click()
+actions = ActionChains()
+actions.move_to_element(clearBtn).perform()
+time.sleep(2)
+
 
 driver.quit()
